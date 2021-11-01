@@ -1,0 +1,29 @@
+aside {
+  .cat-title {
+    font-size: 1.1em;
+    color: #ccc;
+  }
+  .cat-item {
+    .cat-item-icon {
+      background-color: hsla(0, 0%, 100%, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 5px;
+      svg {
+        width: 18px;
+      }
+      img {
+        width: 100%;
+        border-radius: 5px;
+      }
+    }
+
+    .cat-item-name {
+      font-size: 0.76em !important;
+      line-height: 0.95em;
+    }
+  }
+}

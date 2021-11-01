@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import 'bootstrap/dist/css/bootstrap.css';
+import './assets/Attitude-Regular.otf';
+import './assets/Bogart-Semibold-Italic-trial.ttf';
 
 ReactDOM.render(
   <React.StrictMode>
