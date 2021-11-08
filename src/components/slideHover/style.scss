@@ -1,0 +1,43 @@
+.genres {
+  span {
+    font-size: 0.7em;
+    background-color: #ccc;
+    border-radius: 25px;
+  }
+}
+
+.slanted {
+  transform: rotate(40deg);
+  width: 210px;
+  top: 13px;
+  right: -46px;
+  background-color: #c37f23;
+  p {
+    width: 100px !important;
+    margin: 0 auto;
+  }
+}
+
+.price {
+  bottom: 1%;
+  right: 1%;
+  font-size: 0.77em;
+
+  .main {
+    background-color: rgb(126, 114, 114);
+  }
+  .discount {
+    span {
+      text-align: right;
+      background-color: aquamarine;
+      font-size: 0.6em;
+      text-decoration: line-through;
+    }
+  }
+}
+
+.platforms {
+  position: absolute;
+  bottom: 1%;
+  left: 1%;
+}

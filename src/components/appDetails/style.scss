@@ -1,0 +1,30 @@
+.slide-hover-text {
+  text-align: start !important;
+  p {
+    font-size: 0.75em !important;
+  }
+
+  .apphover-description {
+    line-height: 1.2em;
+    height: 4.8em;
+    overflow-y: hidden;
+    text-overflow: ellipsis;
+  }
+
+  img {
+    width: 139px;
+    height: 78px;
+  }
+
+  .app-tags {
+    background-color: #151515;
+    font-size: 0.6em;
+    border-radius: 25px;
+  }
+
+  .to-cart-btn {
+    button {
+      font-size: 0.5em !important;
+    }
+  }
+}

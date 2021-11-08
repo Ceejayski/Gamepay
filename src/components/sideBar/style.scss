@@ -2,6 +2,7 @@ aside {
   .cat-title {
     font-size: 1.1em;
     color: #ccc;
+    border-bottom: 2px solid rgba(19, 19, 19, 0.6);
   }
   .cat-item {
     .cat-item-icon {
@@ -26,4 +27,17 @@ aside {
       line-height: 0.95em;
     }
   }
+}
+
+.sidebar-links {
+  color: #fff !important;
+}
+
+.sidebar-links:hover {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.5975434118960083) 100%
+  );
 }

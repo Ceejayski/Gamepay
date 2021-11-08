@@ -33,7 +33,7 @@ export default class SearchBar extends React.Component {
         callback(options);
       })
       .catch((err) => {
-        console.log(err);
+        callback(err);
       });
   }
 
@@ -68,6 +68,7 @@ export default class SearchBar extends React.Component {
         // override border radius to match the box
         borderRadius: '5px',
         backgroundColor: '#000',
+        zIndex: 9999,
         // kill the gap
       }),
       menuList: (base) => ({
