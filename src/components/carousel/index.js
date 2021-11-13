@@ -91,7 +91,7 @@ export default function Carousel() {
                           </div>
                             )}
                         loadingOverlay={(
-                          <div className="slide -video position-relative mx-auto loader-gradient">
+                          <div className="slide-video position-relative mx-auto loader-gradient">
                             <div className="position-absolute loader-container">
                               <Loading />
                             </div>

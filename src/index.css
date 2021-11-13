@@ -58,3 +58,11 @@ code {
     rgba(0, 0, 0, 0.5975434118960083) 100%
   );
 }
+
+.top-0 {
+  top: 0;
+}
+
+.filter-title {
+  justify-content: space-between;
+}

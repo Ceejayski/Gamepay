@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Carousel from '../carousel';
 import FeaturedList from '../FeaturedList';
+import CategoryList from '../categoryList';
 
 export default function GameList({ list, listType }) {
   return (
@@ -10,6 +11,11 @@ export default function GameList({ list, listType }) {
         <>
           <Carousel />
           <FeaturedList />
+        </>
+      )}
+      {(listType === 'cat' || listType === 'genre') && (
+        <>
+          <CategoryList categoryID={list} listType={listType} />
         </>
       )}
     </div>

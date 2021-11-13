@@ -30,7 +30,7 @@ const UpcomingIcon = (
 );
 const categories = [
   { name: 'Top Sellers', icon: TopSellersIcon, id: 'cat_topsellers' }, { name: 'New Realeses', icon: NewReleasesIcon, id: 'cat_newreleases' },
-  { name: 'Upcoming Games', icon: UpcomingIcon, id: 'cat_comingsoon' }, { name: 'Discounted Games', icon: DiscountIcon, id: 'cat_special' },
+  { name: 'Upcoming Games', icon: UpcomingIcon, id: 'cat_comingsoon' }, { name: 'Discounted Games', icon: DiscountIcon, id: 'cat_specials' },
 ];
 
 const genres = [

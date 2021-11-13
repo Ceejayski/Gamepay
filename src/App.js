@@ -2,6 +2,7 @@ import { useState } from 'react';
 import GameList from './components/gameList';
 import Navbar from './components/navbar';
 import SideBar from './components/sideBar';
+import Footer from './components/footer';
 
 function App() {
   const [gameArrType, setGameArrType] = useState({ name: 'All', type: 'index' });
@@ -12,8 +13,8 @@ function App() {
     <div className="App">
       <Navbar />
       <div className="container-xl">
-        <div className="row">
-          <div className="col-md-2">
+        <div className="row align-items-start">
+          <div className="col-md-2 sticky-top">
             <SideBar clickHandler={linkClick} />
           </div>
           <div className="col-md-10">
@@ -21,6 +22,7 @@ function App() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
