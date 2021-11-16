@@ -6,19 +6,17 @@ import getData from '../../shared/client';
 import endpoint from '../../shared/endpoints';
 import GameCard from '../gameCard';
 import Loading from '../loading';
-import './style.scss';
 
-function CategoryList({ categoryID }) {
+function GenreList({ genreID }) {
   const getCategoryApps = async (id) => {
-    const url = endpoint.getAppsinCat(id);
+    const url = endpoint.getAppsinGenre(id);
     const result = await getData(url);
     return result;
   };
   const {
     isLoading, data, isSuccess, isError,
-  } = useQuery(['CATEGORYAPPS', categoryID], () => getCategoryApps(categoryID));
-  const [defaultFilter] = useState('viewall');
-  const [filter, setFilter] = useState(defaultFilter);
+  } = useQuery(['CATEGORYAPPS', genreID], () => getCategoryApps(genreID));
+  const [filter, setFilter] = useState('');
   const selectedValueHandler = (e) => {
     setFilter(e.target.value);
   };
@@ -50,7 +48,6 @@ function CategoryList({ categoryID }) {
                 className="form-select btn-dark"
                 name="searchSelect"
                 onChange={(e) => selectedValueHandler(e)}
-                defaultValue={defaultFilter}
               >
                 {Object.keys(data.tabs).map((key) => (
                   <option key={key} value={key}>
@@ -66,7 +63,7 @@ function CategoryList({ categoryID }) {
             </div>
             <div />
           </div>
-          {data.tabs[filter] === undefined && (<GameCard gameIds={uniqBy(data.tabs[defaultFilter].items, 'id')} type="filter" />)}
+          {data.tabs[filter] === undefined && (<GameCard gameIds={uniqBy(data.tabs[Object.keys(data.tabs)[0]].items, 'id')} type="filter" />)}
           {data.tabs[filter] !== undefined && (<GameCard gameIds={uniqBy(data.tabs[filter].items, 'id')} type="filter" />)}
         </div>
       </>
@@ -75,8 +72,8 @@ function CategoryList({ categoryID }) {
   );
 }
 
-CategoryList.propTypes = {
-  categoryID: PropTypes.string.isRequired,
+GenreList.propTypes = {
+  genreID: PropTypes.string.isRequired,
 };
 
-export default CategoryList;
+export default GenreList;

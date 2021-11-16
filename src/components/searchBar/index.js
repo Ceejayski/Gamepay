@@ -4,6 +4,7 @@ import { components } from 'react-select';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
+import { Link } from 'react-router-dom';
 import getData from '../../shared/client';
 import endpoint from '../../shared/endpoints';
 
@@ -20,7 +21,7 @@ export default class SearchBar extends React.Component {
 
   fetchResults(inputValue, callback) {
     const { query } = this.state;
-    getData(endpoint.search(query), 'actions')
+    getData(endpoint.search(encodeURI(query.trim())), 'actions')
       .then((res) => {
         const options = [];
         res.forEach((e) => {
@@ -91,21 +92,23 @@ export default class SearchBar extends React.Component {
 
       // eslint-disable-next-line react/jsx-props-no-spreading
       <Option {... props}>
-        <div className="d-flex">
-          <div>
+        <Link to={`/game/${props.data.value}`}>
+          <div className="d-flex">
+            <div>
 
-            <img
-              src={props.data.icon}
-              alt={props.data.value}
-              style={{ width: 80 }}
-            />
-          </div>
-          <div className="ms-2
+              <img
+                src={props.data.icon}
+                alt={props.data.value}
+                style={{ width: 80 }}
+              />
+            </div>
+            <div className="ms-2
           "
-          >
-            {props.data.label}
+            >
+              {props.data.label}
+            </div>
           </div>
-        </div>
+        </Link>
       </Option>
     );
 

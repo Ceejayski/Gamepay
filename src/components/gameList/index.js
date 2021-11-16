@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Carousel from '../carousel';
 import FeaturedList from '../FeaturedList';
 import CategoryList from '../categoryList';
+import GenreList from '../genreList';
 
 export default function GameList({ list, listType }) {
   return (
@@ -13,9 +14,14 @@ export default function GameList({ list, listType }) {
           <FeaturedList />
         </>
       )}
-      {(listType === 'cat' || listType === 'genre') && (
+      {(listType === 'cat') && (
         <>
-          <CategoryList categoryID={list} listType={listType} />
+          <CategoryList categoryID={list} />
+        </>
+      )}
+      {(listType === 'genre') && (
+        <>
+          <GenreList genreID={list} />
         </>
       )}
     </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import SearchBar from '../searchBar';
 import logo from '../../assets/gplogo.png';
 import './style.scss';
+import CartItems from '../CartItems';
 
 export default function componentName() {
   return (
@@ -17,7 +18,9 @@ export default function componentName() {
         <div className="search-section">
           <SearchBar />
         </div>
-        <div className="cart">cart</div>
+        <div className="cart">
+          <CartItems />
+        </div>
       </nav>
     </header>
   );

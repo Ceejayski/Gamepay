@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useQuery } from 'react-query';
+import { Link } from 'react-router-dom';
 import getData from '../../shared/client';
 import endpoint from '../../shared/endpoints';
 import Loading from '../loading';
@@ -57,11 +58,9 @@ function AppDetails({ gameId }) {
             {data.ReviewSummary.strReviewSummary}
           </p>
           <div className="d-flex flex-row-reverse to-cart-btn">
-            <button type="button" className="btn btn-labeled btn-warning btn-sm">
-              <span className="btn-label"><i className="fas fa-plus me-1" /></span>
-              Add to Cart
-            </button>
-
+            <Link to={`/game/${gameId}`} className="btn btn-sm btn-info">
+              More Info
+            </Link>
           </div>
         </div>
       )}

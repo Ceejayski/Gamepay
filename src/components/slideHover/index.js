@@ -41,21 +41,6 @@ function SlideHover({ gameId, hiddenState }) {
           </div>
 
         </div>
-        {/* <div>
-          {!(data.is_free) && data.price_overview.discount_percent > 0
-          && (
-            <div className="position-relative">
-
-              <div className="slanted position-absolute">
-
-                <p className="slanted-text text-center mb-0">
-                  {data.price_overview.discount_percent}
-                  % Discount
-                </p>
-              </div>
-            </div>
-          )}
-        </div> */}
         <div className="price position-absolute">
           {data.is_free && (
             <p className="mb-0 main px-3 py-2">Free to Play</p>

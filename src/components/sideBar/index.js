@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPercent } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import action from '../../assets/action.png';
 import strategy from '../../assets/strategy.png';
 import apex from '../../assets/apex.png';
@@ -13,6 +14,7 @@ import simulation from '../../assets/simulation.png';
 import racing from '../../assets/racing.jpg';
 import adventure from '../../assets/adventure.png';
 import sports from '../../assets/sports.png';
+import RecentlyViewed from '../recentlyViewed';
 
 library.add(faPercent);
 const DiscountIcon = (<FontAwesomeIcon icon="percent" />);
@@ -43,31 +45,28 @@ function SideBar({ clickHandler }) {
       <div>
         <div className="category">
           <p className="cat-title mb-1">
-            <button
-              type="button"
+            <Link
+              to="/"
               className="btn btn-block w-100 sidebar-links"
-              onClick={(e) => {
+              onClick={() => {
                 clickHandler({ name: 'All', type: 'index' });
-                e.preventDefault();
               }}
             >
               Home
-            </button>
-
+            </Link>
           </p>
           <p className="cat-title mb-1 pb-2 pt-1 text-center">Browse Categories</p>
           <div className="cat-item-list ms-3">
             {categories.map((cat) => (
               <div className="categories-contain" key={cat.name}>
-                <button
-                  type="button"
-                  className="btn btn-block w-100 sidebar-links"
-                  onClick={(e) => {
+                <Link
+                  to="/"
+                  className="btn btn-block w-100 sidebar-links py-2 px-3"
+                  onClick={() => {
                     clickHandler({ name: cat.id, type: 'cat' });
-                    e.preventDefault();
                   }}
                 >
-                  <div className="cat-item d-flex align-items-center mb-2">
+                  <div className="cat-item d-flex align-items-center">
                     <div className="cat-item-icon">
                       {cat.icon}
                     </div>
@@ -75,7 +74,7 @@ function SideBar({ clickHandler }) {
                       {cat.name}
                     </p>
                   </div>
-                </button>
+                </Link>
               </div>
             ))}
 
@@ -88,15 +87,14 @@ function SideBar({ clickHandler }) {
             {
               genres.map((genre) => (
                 <div key={genre.name} className="genre-contain">
-                  <button
-                    type="button"
-                    className="btn btn-block w-100 sidebar-links"
-                    onClick={(e) => {
+                  <Link
+                    to="/"
+                    className="btn btn-block w-100 sidebar-links py-2 px-3"
+                    onClick={() => {
                       clickHandler({ name: genre.name, type: 'genre' });
-                      e.preventDefault();
                     }}
                   >
-                    <div className="cat-item d-flex align-items-center mb-2">
+                    <div className="cat-item d-flex align-items-center">
                       <div className="cat-item-icon">
                         <img className="discover-sidebar__image" src={genre.icon} alt={genre.name} />
                       </div>
@@ -104,7 +102,7 @@ function SideBar({ clickHandler }) {
                         {genre.name}
                       </p>
                     </div>
-                  </button>
+                  </Link>
                 </div>
 
               ))
@@ -112,9 +110,7 @@ function SideBar({ clickHandler }) {
           </div>
 
         </div>
-        <div className="category mt-4">
-          <p className="cat-title mb-1 text-center"> Recently Viewed</p>
-        </div>
+        <RecentlyViewed />
       </div>
     </aside>
   );

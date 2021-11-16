@@ -1,15 +1,14 @@
 import React from 'react';
-import './style.scss';
+import './style.css';
 
 export default function Footer() {
   return (
-    <div className="footer-basic">
+    <div className="footer-basic d-flex justify-content-center text-center bg-dark">
       <footer>
-        <div className="social">
-          <a href="/"><i className="icon ion-social-instagram" aria-label="Social" /></a>
-          <a href="/"><i className="icon ion-social-snapchat" aria-label="Social" /></a>
-          <a href="/"><i className="icon ion-social-twitter" aria-label="Social" /></a>
-          <a href="/"><i className="icon ion-social-facebook" aria-label="Social" /></a>
+        <div className="social-links mb-2">
+          <a href="/" className="links-social"><i className="fab fa-instagram" aria-label="Social" /></a>
+          <a href="/" className="links-social"><i className="fab fa-snapchat-square" aria-label="Social" /></a>
+          <a href="/" className="links-social"><i className="fab fa-twitter" aria-label="Social" /></a>
         </div>
         <ul className="list-inline">
           <li className="list-inline-item"><a href="/">Home</a></li>
@@ -18,7 +17,13 @@ export default function Footer() {
           <li className="list-inline-item"><a href="/">Terms</a></li>
           <li className="list-inline-item"><a href="/">Privacy Policy</a></li>
         </ul>
-        <p className="copyright">Company Name © 2018</p>
+        <p className="copyright last-line">
+          GamePay Made With Love by
+          {' '}
+          <a href="http://github.com/ceejayski" className="text-primary">Ceejayski </a>
+          {' '}
+          © 2021
+        </p>
       </footer>
     </div>
   );
