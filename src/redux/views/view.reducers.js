@@ -8,7 +8,6 @@ const INITIAL_STATE = {
 const ViewReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case ViewTypes.ADD_TO_VIEWS:
-      console.log(state.viewedGames);
       return {
         ...state,
         viewedGames: handleAddtoView({

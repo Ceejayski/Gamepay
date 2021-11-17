@@ -20,7 +20,7 @@ function GameDatails({ data, type }) {
       <Link to={`/game/${data.steam_appid}`}>
         {data.movies !== undefined && type !== 'filter' && (
         <HoverVideoPlayer
-          videoSrc={`https://quiet-beyond-94611.herokuapp.com/${data.movies[0][data.movies[0].mp4 !== undefined ? 'mp4' : 'webm'][480]}`}
+          videoSrc={data.movies[0][data.movies[0].mp4 !== undefined ? 'mp4' : 'webm'][480]}
           preload="none"
           style={{
             width: '100%',

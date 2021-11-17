@@ -73,7 +73,7 @@ export default function Carousel() {
 
                       <div className="slide-video d-block">
                         <HoverVideoPlayer
-                          videoSrc={`https://quiet-beyond-94611.herokuapp.com/${slide.webm[480]}`}
+                          videoSrc={slide.webm[480]}
                           pausedOverlay={(
                             <div>
                               <img

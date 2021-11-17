@@ -50,7 +50,7 @@ function GamePage({ data, onViewGame }) {
 
                     <SwiperSlide key={movie.id}>
                       <HoverVideoPlayer
-                        videoSrc={`https://quiet-beyond-94611.herokuapp.com/${movie[movie.mp4 !== undefined ? 'mp4' : 'webm'][480]}`}
+                        videoSrc={movie[movie.mp4 !== undefined ? 'mp4' : 'webm'][480]}
                         preload="none"
                         style={{
                           width: '100%',
