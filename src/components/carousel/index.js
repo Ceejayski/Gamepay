@@ -6,6 +6,7 @@ import SwiperCore, {
 import { useQuery } from 'react-query';
 import { uniqBy } from 'lodash';
 import HoverVideoPlayer from 'react-hover-video-player';
+import { Link } from 'react-router-dom';
 import loading from '../../assets/loader.svg';
 import getData from '../../shared/client';
 import endpoint from '../../shared/endpoints';
@@ -39,7 +40,7 @@ export default function Carousel() {
           pagination
           navigation
           autoplay={{
-            delay: 3000,
+            delay: 10000,
             disableOnInteraction: false,
             pauseOnMouseEnter: true,
           }}
@@ -62,55 +63,56 @@ export default function Carousel() {
           <>
 
             {trailer.map((slide) => (
-              <SwiperSlide
-                key={slide.target.id}
-                data-key={slide.target.id}
-                className="w-100"
-              >
-                <div className="swiper-lazy">
-                  <div className="d-flex">
+              <Link to={`/game/${slide.target.id}`} key={slide.target.id}>
+                <SwiperSlide
+                  data-key={slide.target.id}
+                  className="w-100"
+                >
+                  <div className="swiper-lazy">
+                    <div className="d-flex">
 
-                    <div className="slide-video d-block">
-                      <HoverVideoPlayer
-                        videoSrc={`https://quiet-beyond-94611.herokuapp.com/${slide.webm[480]}`}
-                        pausedOverlay={(
-                          <div>
-                            <img
-                              src={slide.target.large_capsule_image}
-                              alt={slide.name}
-                              style={{
+                      <div className="slide-video d-block">
+                        <HoverVideoPlayer
+                          videoSrc={`https://quiet-beyond-94611.herokuapp.com/${slide.webm[480]}`}
+                          pausedOverlay={(
+                            <div>
+                              <img
+                                src={slide.target.large_capsule_image}
+                                alt={slide.name}
+                                style={{
                                 // Make the image expand to cover the video's dimensions
-                                width: '100%',
-                                height: '100%',
-                                objectFit: 'cover',
-                              }}
-                            />
-                            <div className="position-absolute slide-hover">
-                              <SlideHover gameId={slide.target.id} hiddenState={hoverState} />
+                                  width: '100%',
+                                  height: '100%',
+                                  objectFit: 'cover',
+                                }}
+                              />
+                              <div className="position-absolute slide-hover">
+                                <SlideHover gameId={slide.target.id} hiddenState={hoverState} />
+                              </div>
                             </div>
-                          </div>
                             )}
-                        loadingOverlay={(
-                          <div className="slide-video position-relative mx-auto loader-gradient">
-                            <div className="position-absolute loader-container">
-                              <Loading />
+                          loadingOverlay={(
+                            <div className="slide-video position-relative mx-auto loader-gradient">
+                              <div className="position-absolute loader-container">
+                                <Loading />
+                              </div>
                             </div>
-                          </div>
                             )}
-                      />
-                    </div>
-                    <div className="slide-text flex-fill p-2 bg-dark">
-                      <div className="border border-danger">
-                        <AppDetails gameId={slide.target.id} />
+                        />
+                      </div>
+                      <div className="slide-text flex-fill p-2 bg-dark">
+                        <div className="border border-danger">
+                          <AppDetails gameId={slide.target.id} />
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div className="swiper-lazy-preloader swiper-lazy-preloader-white">
-                  <img src={loading} alt="loading" />
-                </div>
+                  <div className="swiper-lazy-preloader swiper-lazy-preloader-white">
+                    <img src={loading} alt="loading" />
+                  </div>
 
-              </SwiperSlide>
+                </SwiperSlide>
+              </Link>
             ))}
           </>
           )}

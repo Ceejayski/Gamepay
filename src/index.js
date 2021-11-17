@@ -2,19 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { ReactQueryDevtools } from 'react-query/devtools';
+import { Provider } from 'react-redux';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.css';
 import './assets/Attitude-Regular.otf';
 import './assets/Bogart-Semibold-Italic-trial.ttf';
+import allStore from './redux/createStore';
 
 const queryClient = new QueryClient();
 
 ReactDOM.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <App />
-      <ReactQueryDevtools initialIsOpen={false} />
+      <Provider store={allStore}>
+        <App />
+      </Provider>
     </QueryClientProvider>
   </React.StrictMode>,
   document.getElementById('root'),

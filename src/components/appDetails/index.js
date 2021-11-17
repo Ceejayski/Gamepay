@@ -57,11 +57,6 @@ function AppDetails({ gameId }) {
             {' '}
             {data.ReviewSummary.strReviewSummary}
           </p>
-          <div className="d-flex flex-row-reverse to-cart-btn">
-            <Link to={`/game/${gameId}`} className="btn btn-sm btn-info">
-              More Info
-            </Link>
-          </div>
         </div>
       )}
     </>
