@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useQuery } from 'react-query';
-import { Link } from 'react-router-dom';
 import getData from '../../shared/client';
 import endpoint from '../../shared/endpoints';
 import Loading from '../loading';
